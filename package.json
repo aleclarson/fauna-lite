@@ -1,0 +1,33 @@
+{
+  "name": "fauna-lite",
+  "version": "0.1.0",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "typings": "dist/index.d.ts",
+  "description": "Lightweight client for FaunaDB",
+  "keywords": [
+    "fauna",
+    "faunadb",
+    "lite",
+    "lightweight",
+    "client"
+  ],
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "dependencies": {
+    "@alloc/is": "^2.1.2"
+  },
+  "devDependencies": {
+    "esbuild": "^0.6.19",
+    "prettier": "^2.0.5",
+    "rollup": "^2.23.1",
+    "rollup-plugin-dts": "^1.4.10",
+    "rollup-plugin-esbuild": "^2.4.2",
+    "typescript": "^3.9.7"
+  }
+}
