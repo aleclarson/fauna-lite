@@ -1,9 +1,17 @@
 import { Ref, FaunaTime, FaunaDate } from './values'
 import { $F } from './symbols'
 
+/** @internal */
+export const toFaunaType = (val: any) => val && val[$F]
+
 export const FaunaJSON = {
-  parse: (json: string) => JSON.parse(json, faunaParser),
-  stringify: (data: any) => JSON.stringify(data, faunaReplacer),
+  parse: (json: string) => JSON.parse(json, FaunaJSON.parser),
+  stringify: (data: any) => JSON.stringify(data, FaunaJSON.replacer),
+
+  /** @internal */
+  parser: faunaParser,
+  /** @internal */
+  replacer: faunaReplacer,
 }
 
 const refKey = '@ref'
@@ -35,13 +43,13 @@ function faunaParser(_key: string, value: any) {
 }
 
 function faunaReplacer(_key: string, value: any) {
-  switch (value && value[$F]) {
+  switch (toFaunaType(value)) {
     case Ref:
-      return { '@ref': { ...value } }
+      return { [refKey]: { ...value } }
     case FaunaTime:
-      return { '@ts': value.isoTime }
+      return { [timeKey]: value.isoTime }
     case FaunaDate:
-      return { '@date': value.isoDate }
+      return { [dateKey]: value.isoDate }
   }
   return value
 }

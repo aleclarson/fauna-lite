@@ -1,7 +1,8 @@
 import { Class, is } from '@alloc/is'
 import { $F } from './symbols'
 
-const defineTag = (cls: Class) =>
+/** @internal */
+export const tagFaunaType = (cls: Class) =>
   Object.defineProperty(cls.prototype, $F, { value: cls })
 
 export class Ref {
@@ -33,7 +34,7 @@ export class Ref {
   }
 }
 
-defineTag(Ref)
+tagFaunaType(Ref)
 
 export class FaunaTime {
   readonly isoTime: string
@@ -51,7 +52,7 @@ export class FaunaTime {
   }
 }
 
-defineTag(FaunaTime)
+tagFaunaType(FaunaTime)
 
 export class FaunaDate {
   readonly isoDate: string
@@ -67,4 +68,4 @@ export class FaunaDate {
   }
 }
 
-defineTag(FaunaDate)
+tagFaunaType(FaunaDate)
