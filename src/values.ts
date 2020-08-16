@@ -5,12 +5,15 @@ import { $F } from './symbols'
 export const tagFaunaType = (cls: Class) =>
   Object.defineProperty(cls.prototype, $F, { value: cls })
 
-export class Ref {
+export class Ref<T extends object = any> {
   constructor(
     readonly id: string,
     readonly collection?: Ref,
     readonly database?: Ref
   ) {}
+
+  /** This enforces type nominality. */
+  protected _ref!: { data: T }
 
   equals(ref: Ref | undefined): boolean {
     return (
@@ -38,6 +41,7 @@ tagFaunaType(Ref)
 
 export class FaunaTime {
   readonly isoTime: string
+
   constructor(value: string | Date) {
     if (is.date(value)) {
       value = value.toISOString()
@@ -46,16 +50,21 @@ export class FaunaTime {
     }
     this.isoTime = value
   }
+
   /** Create a `Date` object using `this.isoTime`, thereby **losing nanosecond precision.** */
   get date() {
     return new Date(this.isoTime)
   }
+
+  /** This enforces type nominality. */
+  protected _type!: 'FaunaTime'
 }
 
 tagFaunaType(FaunaTime)
 
 export class FaunaDate {
   readonly isoDate: string
+
   constructor(value: string | Date) {
     if (is.date(value)) {
       // Extract the "YYYY-MM-DD" part.
@@ -63,9 +72,13 @@ export class FaunaDate {
     }
     this.isoDate = value
   }
+
   get date() {
     return new Date(this.isoDate)
   }
+
+  /** This enforces type nominality. */
+  protected _type!: 'FaunaDate'
 }
 
 tagFaunaType(FaunaDate)
