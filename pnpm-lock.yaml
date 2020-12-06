@@ -1,12 +1,12 @@
 dependencies:
   '@alloc/is': 2.1.2
 devDependencies:
-  esbuild: 0.6.19
-  prettier: 2.0.5
-  rollup: 2.23.1
-  rollup-plugin-dts: 1.4.10_rollup@2.23.1+typescript@3.9.7
-  rollup-plugin-esbuild: 2.4.2_esbuild@0.6.19+rollup@2.23.1
-  typescript: 3.9.7
+  esbuild: 0.8.20
+  prettier: 2.2.1
+  rollup: 2.34.2
+  rollup-plugin-dts: 2.0.0_rollup@2.34.2+typescript@4.1.2
+  rollup-plugin-esbuild: 2.6.0_esbuild@0.8.20+rollup@2.34.2
+  typescript: 4.1.2
 lockfileVersion: 5.1
 packages:
   /@alloc/is/2.1.2:
@@ -34,23 +34,18 @@ packages:
     optional: true
     resolution:
       integrity: sha512-i6rgnR/YgPEQzZZnbTHHuZdlE8qyoBNalD6F+q4vAFlcMEcqmkoG+mPqJYJCo63qPf74+Y1UZsl3l6f7/RIkmA==
-  /@rollup/pluginutils/3.1.0_rollup@2.23.1:
+  /@rollup/pluginutils/4.1.0_rollup@2.34.2:
     dependencies:
-      '@types/estree': 0.0.39
-      estree-walker: 1.0.1
+      estree-walker: 2.0.1
       picomatch: 2.2.2
-      rollup: 2.23.1
+      rollup: 2.34.2
     dev: true
     engines:
       node: '>= 8.0.0'
     peerDependencies:
       rollup: ^1.20.0||^2.0.0
     resolution:
-      integrity: sha512-GksZ6pr6TpIjHm8h9lSQ8pi8BE9VeubNT0OMJ3B5uZJ8pz73NPiqOtCog/x2/QzM1ENChPKxMDhiQuRHsqc+lg==
-  /@types/estree/0.0.39:
-    dev: true
-    resolution:
-      integrity: sha512-EYNwp3bU+98cpU4lAWYYL7Zz+2gryWH1qbdDTidVd6hkiR6weksdbMadyXKXNPEkQFhXM+hVO9ZygomHXp+AIw==
+      integrity: sha512-TrBhfJkFxA+ER+ew2U2/fHbebhLT/l/2pRk0hfj9KusXUuRXd2v0R58AfaZK9VXDQ4TogOSEmICVrQAA3zFnHQ==
   /ansi-styles/3.2.1:
     dependencies:
       color-convert: 1.9.3
@@ -83,12 +78,12 @@ packages:
     optional: true
     resolution:
       integrity: sha1-p9BVi9icQveV3UIyj3QIMcpTvCU=
-  /esbuild/0.6.19:
+  /esbuild/0.8.20:
     dev: true
     hasBin: true
     requiresBuild: true
     resolution:
-      integrity: sha512-yFoX6XKDNZKPMHWf3W7L40zWC7aCm3WPWucqs7U/4YQgQYbsjx08K5j7FUQ/9pwHNhMzrSzKFR6MdD4/V+L/Pw==
+      integrity: sha512-xXNLXa2SraaAoeTybOMAvOf6KW/DthI3ATXMG+W3yMav1iFpEGvo4XS22AzCPE3rTXbK/7TykxpwI8mD6lYUOg==
   /escape-string-regexp/1.0.5:
     dev: true
     engines:
@@ -96,10 +91,10 @@ packages:
     optional: true
     resolution:
       integrity: sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=
-  /estree-walker/1.0.1:
+  /estree-walker/2.0.1:
     dev: true
     resolution:
-      integrity: sha512-1fMXF3YP4pZZVozF8j/ZLfvnR8NSIljt56UhbZ5PeeDmmGHpgpdwQt7ITlGvYaQukCvuBRMLEiKiYC+oeIg4cg==
+      integrity: sha512-tF0hv+Yi2Ot1cwj9eYHtxC0jB9bmjacjQs6ZBTj82H8JwUywFuc+7E83NWfNMwHXZc11mjfFcVXPe9gEP4B8dg==
   /fsevents/2.1.3:
     dev: true
     engines:
@@ -127,46 +122,53 @@ packages:
     optional: true
     resolution:
       integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==
+  /magic-string/0.25.7:
+    dependencies:
+      sourcemap-codec: 1.4.8
+    dev: true
+    resolution:
+      integrity: sha512-4CrMT5DOHTDk4HYDlzmwu4FVCcIYI8gauveasrdCu2IKIFOJ3f0v/8MDGJCDL9oD2ppz/Av1b0Nj345H9M+XIA==
   /picomatch/2.2.2:
     dev: true
     engines:
       node: '>=8.6'
     resolution:
       integrity: sha512-q0M/9eZHzmr0AulXyPwNfZjtwZ/RBZlbN3K3CErVrk50T2ASYI7Bye0EvekFY3IP1Nt2DHu0re+V2ZHIpMkuWg==
-  /prettier/2.0.5:
+  /prettier/2.2.1:
     dev: true
     engines:
       node: '>=10.13.0'
     hasBin: true
     resolution:
-      integrity: sha512-7PtVymN48hGcO4fGjybyBSIWDsLU4H4XlvOHfq91pz9kkGlonzwTfYkaIEwiRg/dAJF9YlbsduBAgtYLi+8cFg==
-  /rollup-plugin-dts/1.4.10_rollup@2.23.1+typescript@3.9.7:
+      integrity: sha512-PqyhM2yCjg/oKkFPtTGUojv7gnZAoG80ttl45O6x2Ug/rMJw4wcc9k6aaf2hibP7BGVCCM33gZoGjyvt9mm16Q==
+  /rollup-plugin-dts/2.0.0_rollup@2.34.2+typescript@4.1.2:
     dependencies:
-      rollup: 2.23.1
-      typescript: 3.9.7
+      magic-string: 0.25.7
+      rollup: 2.34.2
+      typescript: 4.1.2
     dev: true
     optionalDependencies:
       '@babel/code-frame': 7.10.4
     peerDependencies:
-      rollup: ^2.23.0
-      typescript: ^3.9.7
+      rollup: ^2.33.3
+      typescript: ^4.1.2
     resolution:
-      integrity: sha512-bL6MBXc8lK7D5b/tYbHaglxs4ZxMQTQilGA6Xm9KQBEj4h9ZwIDlAsvDooGjJ/cOw23r3POTRtSCEyTHxtzHJg==
-  /rollup-plugin-esbuild/2.4.2_esbuild@0.6.19+rollup@2.23.1:
+      integrity: sha512-kDicSNT9m2z6swvJVqYnkgcVBusnlRD5qCtloqWlalmi4T/gS6mQqICYAEs+YzeBw0sn+9ZIrwu2UeDpV3uyLQ==
+  /rollup-plugin-esbuild/2.6.0_esbuild@0.8.20+rollup@2.34.2:
     dependencies:
-      '@rollup/pluginutils': 3.1.0_rollup@2.23.1
-      esbuild: 0.6.19
+      '@rollup/pluginutils': 4.1.0_rollup@2.34.2
+      esbuild: 0.8.20
       joycon: 2.2.5
       strip-json-comments: 3.1.1
     dev: true
     engines:
       node: '>=12'
     peerDependencies:
-      esbuild: ^0.6.0
+      esbuild: ^0.8.0
       rollup: '*'
     resolution:
-      integrity: sha512-GJOaC2onOPcCN0w7tYv60Thg3ciX40YRubeGyS/DRo862udAiFuQGTIBSyNX20EWyvYLZmZ967ziGdzUJtIaAg==
-  /rollup/2.23.1:
+      integrity: sha512-wtyDAX8kNABrBfwkrrG2xLRKRGSWUyMBURS067IRvRMpgJlLRo14WcFl95uGc4iYWfdAx436/z1LMzYqdlY4ig==
+  /rollup/2.34.2:
     dev: true
     engines:
       node: '>=10.0.0'
@@ -174,7 +176,11 @@ packages:
     optionalDependencies:
       fsevents: 2.1.3
     resolution:
-      integrity: sha512-Heyl885+lyN/giQwxA8AYT2GY3U+gOlTqVLrMQYno8Z1X9lAOpfXPiKiZCyPc25e9BLJM3Zlh957dpTlO4pa8A==
+      integrity: sha512-mvtQLqu3cNeoctS+kZ09iOPxrc1P1/Bt1z15enuQ5feyKOdM3MJAVFjjsygurDpSWn530xB4AlA83TWIzRstXA==
+  /sourcemap-codec/1.4.8:
+    dev: true
+    resolution:
+      integrity: sha512-9NykojV5Uih4lgo5So5dtw+f0JgJX30KCNI8gwhz2J9A15wD0Ml6tjHKwf6fTSa6fAdVBdZeNOs9eJ71qCk8vA==
   /strip-json-comments/3.1.1:
     dev: true
     engines:
@@ -190,18 +196,18 @@ packages:
     optional: true
     resolution:
       integrity: sha512-QjVjwdXIt408MIiAqCX4oUKsgU2EqAGzs2Ppkm4aQYbjm+ZEWEcW4SfFNTr4uMNZma0ey4f5lgLrkB0aX0QMow==
-  /typescript/3.9.7:
+  /typescript/4.1.2:
     dev: true
     engines:
       node: '>=4.2.0'
     hasBin: true
     resolution:
-      integrity: sha512-BLbiRkiBzAwsjut4x/dsibSTB6yWpwT5qWmC2OfuCg3GgVQCSgMs4vEctYPhsaGtd0AeuuHMkjZ2h2WG8MSzRw==
+      integrity: sha512-thGloWsGH3SOxv1SoY7QojKi0tc+8FnOmiarEGMbd/lar7QOEd3hvlx3Fp5y6FlDUGl9L+pd4n2e+oToGMmhRQ==
 specifiers:
   '@alloc/is': ^2.1.2
-  esbuild: ^0.6.19
+  esbuild: ^0.8.20
   prettier: ^2.0.5
   rollup: ^2.23.1
-  rollup-plugin-dts: ^1.4.10
+  rollup-plugin-dts: ^2.0.0
   rollup-plugin-esbuild: ^2.4.2
-  typescript: ^3.9.7
+  typescript: ^4.1.2
