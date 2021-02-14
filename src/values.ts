@@ -26,7 +26,26 @@ export class Ref<T extends object = any> {
     )
   }
 
-  static Native: { [key: string]: Ref } = {
+  /**
+   * Encode this ref into a string.
+   *
+   * Database refs are not supported.
+   */
+  toString() {
+    const { id, collection } = this
+    return collection == Ref.Native.collections ? collection.id + '/' + id : id
+  }
+
+  /**
+   * Convert an encoded ref into a `Ref` instance.
+   */
+  static from(encodedRef: string) {
+    const [scope, id] = encodedRef.split('/')
+    const collection = new Ref(scope, Ref.Native.collections)
+    return id ? new Ref(id, collection) : collection
+  }
+
+  static Native = {
     collections: new Ref('collections'),
     indexes: new Ref('indexes'),
     databases: new Ref('databases'),

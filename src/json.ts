@@ -18,6 +18,8 @@ const refKey = '@ref'
 const timeKey = '@ts'
 const dateKey = '@date'
 
+type NativeRef = keyof typeof Ref['Native']
+
 function parseRef(value: any): Ref {
   const { id, collection, database } = value[refKey]
   return collection || database
@@ -26,7 +28,7 @@ function parseRef(value: any): Ref {
         collection && parseRef(collection),
         database && parseRef(database)
       )
-    : Ref.Native[id] || new Ref(id)
+    : Ref.Native[id as NativeRef] || new Ref(id)
 }
 
 function faunaParser(_key: string, value: any) {
